@@ -1,0 +1,261 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\controllers\\patienthistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\controllers\\patienthistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\models\\patienthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\models\\patienthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\clinicapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\clinicapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\data\\clinicdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\data\\clinicdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|c:\\users\\tester\\desktop\\after\\clinicapi\\clinicapi\\migrations\\20260515173822_addpatienthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F942601-CFDC-77A1-08C0-C0AAEB53447B}|ClinicAPI\\ClinicAPI.csproj|solutionrelative:clinicapi\\migrations\\20260515173822_addpatienthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClinicDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Data\\ClinicDbContext.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Data\\ClinicDbContext.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Data\\ClinicDbContext.cs",
+              "RelativeToolTip": "ClinicAPI\\Data\\ClinicDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:18:01.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatientHistoryController.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\PatientHistoryController.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Controllers\\PatientHistoryController.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\PatientHistoryController.cs",
+              "RelativeToolTip": "ClinicAPI\\Controllers\\PatientHistoryController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwB0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:16:23.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PatientHistory.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\PatientHistory.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Models\\PatientHistory.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\PatientHistory.cs",
+              "RelativeToolTip": "ClinicAPI\\Models\\PatientHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:14:56.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Models\\Appointment.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\Appointment.cs",
+              "RelativeToolTip": "ClinicAPI\\Models\\Appointment.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T11:31:06.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20260515173822_AddPatientHistory.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Migrations\\20260515173822_AddPatientHistory.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Migrations\\20260515173822_AddPatientHistory.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Migrations\\20260515173822_AddPatientHistory.cs",
+              "RelativeToolTip": "ClinicAPI\\Migrations\\20260515173822_AddPatientHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:38:22.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Controllers\\AppointmentsController.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "ClinicAPI\\Controllers\\AppointmentsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:11:22.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClinicAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\ClinicAPI.csproj",
+              "RelativeDocumentMoniker": "ClinicAPI\\ClinicAPI.csproj",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\ClinicAPI.csproj",
+              "RelativeToolTip": "ClinicAPI\\ClinicAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-15T17:31:52.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "ClinicAPI\\Controllers\\PatientsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T11:58:23.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260515173517_AddPatientHistory.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs",
+              "RelativeToolTip": "ClinicAPI\\Migrations\\20260515173517_AddPatientHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:35:17.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\User.cs",
+              "RelativeToolTip": "ClinicAPI\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T11:35:11.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\Patient.cs",
+              "RelativeToolTip": "ClinicAPI\\Models\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T17:20:59.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "ClinicAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\appsettings.json",
+              "RelativeToolTip": "ClinicAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T14:06:28.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "ClinicAPI\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAADEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:58:53.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "ClinicAPI\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T10:57:42.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Program.cs",
+              "RelativeDocumentMoniker": "ClinicAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\TESTER\\Desktop\\after\\ClinicAPI\\ClinicAPI\\Program.cs",
+              "RelativeToolTip": "ClinicAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T21:15:55.419Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
