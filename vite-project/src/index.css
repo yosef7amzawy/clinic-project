@@ -1,0 +1,176 @@
+* {
+  border-radius: 0 !important;
+}
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: #f4f6f5;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 270px;
+  background: #1b5e46;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar li {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sidebar .active {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Footer */
+.sidebar-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.sidebar-footer h4 {
+  margin-bottom: 5px;
+}
+
+.sidebar-footer span {
+  display: block;
+  margin-top: 3px;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* Top */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 100px;
+  font-family: 'Cairo';
+}
+
+/* Days */
+.days {
+  display: flex;
+  gap: 25px;
+}
+
+/* Day */
+.day {
+  width: 270px;
+}
+
+.day-header {
+  background: #1b5e46;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Slot */
+.slot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  font-weight: 600;
+}
+
+.slot button {
+  background: #1b5e46;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cairo';
+  font-weight: 600;
+}
+/* يخلي اللينك شكله زي الكلام العادي */
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+/* شكل القائمة */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* العنصر النشط */
+.sidebar ul li.active {
+  background: #2e7d5b;
+  color: white;
+}
+
+/* hover */
+.sidebar ul li:hover {
+  background: #2e7d5b;
+  color: white;
+}

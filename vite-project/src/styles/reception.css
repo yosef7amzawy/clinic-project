@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 40px 35px;
+  background: #f4f6f5;
+}
+
+/* ===== TOP SECTION ===== */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  direction: rtl;
+  margin-bottom: 35px;
+}
+
+/* ===== RIGHT SIDE ===== */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* العنوان */
+.reception-page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+  padding-right: 0;
+}
+
+/* الأيام */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  margin-right: 0;
+}
+
+.tab {
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+}
+
+.tab.active {
+  background: #1b5e46;
+  color: white;
+  border-color: #1b5e46;
+}
+
+/* ===== FILTERS ===== */
+.filters {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.filter label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.filter select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-family: Cairo;
+}
+
+/* ===== INFO ===== */
+.info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* ===== TABLE ===== */
+.table {
+  margin-top: 10px;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr 150px;
+  background: #1b5e46;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr 150px;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.time {
+  font-weight: 600;
+}
+
+/* ===== STATUS ===== */
+.status {
+  padding: 4px 12px;
+  font-size: 13px;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.status.notPaid {
+  color: #e53935;
+  border-color: #e53935;
+}
+
+.status.pending {
+  color: #777;
+  border-color: #ccc;
+}
+
+.status.paid {
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+
+/* ===== BOOK BAR ===== */
+.book-bar {
+  grid-column: 2 / 6;
+  background: #1b5e46;
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-weight: 600;
+  margin: 0 10px;
+  cursor: pointer;
+}

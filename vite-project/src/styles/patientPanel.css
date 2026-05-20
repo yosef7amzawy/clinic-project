@@ -1,0 +1,266 @@
+.panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* البانل الجانبي */
+
+.panel {
+  width: 380px;
+  height: 100vh;
+  background: #1a1a2e;
+  color: white;
+  overflow-y: auto;
+  padding: 20px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.panel-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-name h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.panel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.panel-section h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+/* مودال دخول المريض */
+
+.visit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visit-modal {
+
+  background: #171744;
+
+  color: white;
+
+  width: 600px;
+
+  max-width: 92%;
+
+  border-radius: 18px;
+
+  padding: 35px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+
+  direction: rtl;
+
+  animation: popup 0.25s ease;
+
+  box-sizing: border-box;
+
+}
+
+.visit-modal h2 {
+
+  text-align: center;
+
+  margin: 0 0 30px;
+
+  font-size: 42px;
+
+  color: white;
+
+}
+
+.visit-modal h3 {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  color: #d8d8d8;
+
+  font-size: 20px;
+
+}
+
+.visit-modal textarea {
+
+  width: 100%;
+
+  min-height: 120px;
+
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #2d2d5a;
+
+  background: #24245c;
+
+  color: white;
+
+  padding: 15px;
+
+  font-size: 16px;
+
+  resize: none;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  font-family: inherit;
+
+}
+
+.visit-modal textarea::placeholder {
+
+  color: #b8b8c9;
+
+}
+
+.visit-buttons {
+
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 10px;
+
+}
+
+.visit-buttons button {
+
+  flex: 1;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.visit-buttons button:first-child {
+
+  background: #1f8b4c;
+
+  color: white;
+
+}
+
+.visit-buttons button:first-child:hover {
+
+  background: #18703d;
+
+}
+
+.close-btn {
+
+  background: #8d8d8d;
+
+  color: white;
+
+}
+
+.close-btn:hover {
+
+  background: #707070;
+
+}
+
+/* رسالة النجاح */
+
+.success-message {
+
+  position: fixed;
+
+  top: 30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #f8d7da;
+
+  color: #b42318;
+
+  padding: 18px 35px;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  z-index: 99999;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+}
+
+/* انيميشن */
+
+@keyframes popup {
+
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}

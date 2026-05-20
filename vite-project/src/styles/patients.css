@@ -1,0 +1,227 @@
+.patients-container {
+  display: flex;
+}
+
+.patients-main {
+  flex: 1;
+  padding: 40px 35px;
+  background: #f4f6f5;
+}
+
+.patients-top-section {
+  display: flex;
+  justify-content: flex-start;  /* غيرها من flex-end لـ flex-start */
+  direction: rtl;
+  margin-bottom: 30px;
+}
+
+.patients-page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  direction: rtl;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+
+.card-status {
+  background: #1b5e46;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-time {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: rtl;
+}
+
+.card-day {
+  font-size: 14px;
+  color: #888;
+  text-align: right;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  text-align: right;
+}
+.access-denied-message{
+    position: fixed;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+
+    background: #ffebee;
+    color: #d32f2f;
+
+    padding: 18px 35px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+    z-index: 9999;
+
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+.enter-btn{
+
+  background:#0f7b53;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.visit-modal-overlay{
+
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:9999;
+}
+
+.visit-modal{
+
+  width:500px;
+
+  background:white;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+.visit-modal textarea{
+
+  min-height:100px;
+
+  resize:none;
+
+  padding:10px;
+
+  border-radius:10px;
+
+  border:1px solid #ccc;
+
+  font-size:16px;
+}
+
+.visit-buttons{
+
+  display:flex;
+
+  gap:10px;
+}
+
+.visit-buttons button{
+
+  flex:1;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+  background:#0f7b53;
+
+  color:white;
+}
+
+.close-btn{
+
+  background:#999 !important;
+}
+.success-message {
+
+  position: fixed;
+
+  top: 30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #f8d7da;
+
+  color: #b42318;
+
+  padding: 18px 35px;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  z-index: 99999;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+}
