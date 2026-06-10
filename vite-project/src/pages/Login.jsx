@@ -7,7 +7,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("doctor");
   const [error, setError] = useState("");
-
+{/*
   const handleLogin = async () => {
     setError("");
     try {
@@ -39,7 +39,11 @@ function Login() {
     } catch (err) {
       setError("حدث خطأ أثناء تسجيل الدخول");
     }
-  };
+  };*/}
+  const handleLogin = () => {
+  localStorage.setItem("role", "doctor");
+  navigate("/patients");
+};
 
   return (
     <div className="login-container">
