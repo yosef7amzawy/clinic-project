@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 16px;
+  text-align: right;
 }
 
 .sidebar-brand {
@@ -43,20 +44,18 @@ body {
 }
 
 .sidebar-brand-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #2d7dd2;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 18px;
 }
 
 .sidebar-brand-text h3 {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   color: #1a1a2e;
   text-align: right;
 }
@@ -85,7 +84,11 @@ body {
 .sidebar ul li {
   margin-bottom: 4px;
 }
-
+.sidebar-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 .sidebar ul li a {
   display: flex;
   align-items: center;
@@ -98,6 +101,8 @@ body {
   text-decoration: none;
   transition: all 0.15s;
   justify-content: flex-end;
+  text-align: right;
+  flex-direction: row-reverse;
 }
 
 .sidebar ul li a:hover {
@@ -183,4 +188,85 @@ body {
   font-size: 14px;
   font-weight: 600;
   z-index: 9999;
+}
+/* ========================= */
+/* Mobile Responsive */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .container,
+  .patients-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  .sidebar-brand {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sidebar-brand-text h3 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .sidebar-brand-text span {
+    text-align: center;
+  }
+
+  .sidebar-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .sidebar ul li {
+    flex: 1;
+    min-width: 130px;
+    margin-bottom: 0;
+  }
+
+  .sidebar ul li a {
+    justify-content: center;
+    text-align: center;
+    flex-direction: row-reverse;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main,
+  .patients-main {
+    width: 100%;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
 }

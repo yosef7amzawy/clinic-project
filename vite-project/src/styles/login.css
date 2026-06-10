@@ -254,3 +254,42 @@
   color: #9ca3af;
   margin-top: 1rem;
 }
+/* ===========================
+   Login — Mobile Media Query
+   =========================== */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    flex: none;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .login-hero h1 {
+    font-size: 22px;
+  }
+
+  .login-hero p {
+    font-size: 13px;
+  }
+
+  .login-stats {
+    gap: 8px;
+  }
+
+  .login-stat {
+    padding: 10px 12px;
+  }
+
+  .login-stat .stat-value {
+    font-size: 18px;
+  }
+
+  .login-right {
+    flex: none;
+    padding: 2rem 1.5rem;
+  }
+}

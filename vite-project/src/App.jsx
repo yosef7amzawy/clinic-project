@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Appointments />} />
       <Route path="/login" element={<Login />} />
       <Route path="/appointments" element={<Appointments />} />
       <Route path="/reception" element={<Reception />} />

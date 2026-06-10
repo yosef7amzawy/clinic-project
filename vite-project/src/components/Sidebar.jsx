@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Sidebar() {
   const location = useLocation();
@@ -27,7 +28,9 @@ function Sidebar() {
             <h3>عيادة الباطنة</h3>
             <span>نظام إدارة العيادة</span>
           </div>
-          <div className="sidebar-brand-icon">🏥</div>
+          <div className="sidebar-brand-icon">
+  <img src={logo} alt="Clinic Logo" className="sidebar-logo" />
+          </div>
         </div>
 
         <p className="sidebar-section-label">القائمة الرئيسية</p>

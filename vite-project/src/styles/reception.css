@@ -314,3 +314,92 @@
 .rec-status.pending   { background: #fef9c3; color: #92400e; }
 .rec-status.paid      { background: #dcfce7; color: #166534; }
 .rec-status.cancelled { background: #fee2e2; color: #991b1b; }
+
+/* ===========================
+   Reception — Mobile Media Query
+   =========================== */
+@media (max-width: 768px) {
+  .main {
+    padding: 16px;
+  }
+
+  /* Header */
+  .rec-header {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .rec-new-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rec-title { font-size: 22px; }
+
+  /* Stats — عمود واحد */
+  .rec-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Filters — عمود واحد */
+  .rec-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .rec-filters-center {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .rec-filter-group select {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .rec-filter-btn-blue {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Tabs — scroll أفقي */
+  .rec-tabs {
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+
+  .rec-tab {
+    min-width: 120px;
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  /* Table — تخفي الأعمدة الزيادة */
+  .rec-table-header {
+    grid-template-columns: 90px 1fr 100px;
+  }
+
+  .rec-table-header span:nth-child(3),
+  .rec-table-header span:nth-child(4) {
+    display: none;
+  }
+
+  .rec-row {
+    grid-template-columns: 90px 1fr 100px;
+  }
+
+  .rec-row span:nth-child(3),
+  .rec-row span:nth-child(4) {
+    display: none;
+  }
+
+  .rec-book-bar {
+    grid-column: 2 / 4;
+  }
+
+  .rec-time {
+    font-size: 12px;
+  }
+}

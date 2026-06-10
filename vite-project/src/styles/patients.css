@@ -386,3 +386,44 @@
   .day-grid { grid-template-columns: 1fr; }
   .stats-row { flex-direction: column; }
 }
+
+/* ===========================
+   Patients — Mobile Media Query
+   =========================== */
+@media (max-width: 768px) {
+  .patients-main {
+    padding: 16px;
+  }
+
+  /* Stats */
+  .stats-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Day grid — عمود واحد */
+  .day-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* كارد الموعد */
+  .appt-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .appt-name {
+    font-size: 13px;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 20px 16px;
+    width: 95%;
+  }
+
+  /* Header */
+  .patients-title {
+    font-size: 20px;
+  }
+}

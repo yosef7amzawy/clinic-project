@@ -238,3 +238,50 @@
   color: #9ca3af;
   cursor: not-allowed;
 }
+
+/* ===========================
+   Appointments — Mobile Media Query
+   =========================== */
+@media (max-width: 768px) {
+  /* الـ main padding */
+  .main {
+    padding: 16px;
+  }
+
+  /* Header */
+  .appt-title { font-size: 22px; }
+
+  /* Stats — عمود واحد */
+  .appt-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Filters — عمود واحد */
+  .appt-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .appt-filters-center {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .appt-filter-group select {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .appt-filter-btn-blue {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Days Grid — عمود واحد بدل 4 */
+  .appt-days {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
