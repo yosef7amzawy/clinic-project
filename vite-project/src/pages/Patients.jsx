@@ -17,13 +17,13 @@ function Patients() {
   const [successMessage, setSuccessMessage] = useState("");
 
   // حماية الصفحة
-  useEffect(() => {
-    const role = localStorage.getItem("role");
-    if (role !== "doctor") {
-      document.body.innerHTML += `<div class="access-denied-message">غير مصرح لك بالدخول لهذه الصفحة</div>`;
-      navigate("/reception");
-    }
-  }, [navigate]);
+  //useEffect(() => {
+   // const role = localStorage.getItem("role");
+   // if (role !== "doctor") {
+    //  document.body.innerHTML += `<div class="access-denied-message">غير مصرح لك بالدخول لهذه الصفحة</div>`;
+     // navigate("/reception");
+  //  }
+  //}, [navigate]);
 
   // جلب الحجوزات
   useEffect(() => {

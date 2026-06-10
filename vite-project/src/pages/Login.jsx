@@ -8,6 +8,40 @@ function Login() {
   const [role, setRole] = useState("doctor");
   const [error, setError] = useState("");
 
+{/*
+  const handleLogin = async () => {
+    setError("");
+    try {
+      const response = await fetch("https://localhost:7232/api/Users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "البريد الإلكتروني أو كلمة المرور غير صحيحة");
+        return;
+      }
+
+      if (data.role !== role) {
+        setError("لقد اخترت نوع مستخدم خاطئ");
+        return;
+      }
+
+      localStorage.setItem("role", "doctor");
+
+      if (data.role === "doctor") {
+        navigate("/patients");
+      } else if (data.role === "receptionist") {
+        navigate("/reception");
+      }
+    } catch (err) {
+      setError("حدث خطأ أثناء تسجيل الدخول");
+    }
+  //};*/}
+
   const handleLogin = () => {
   localStorage.setItem("role", "doctor");
   navigate("/patients");

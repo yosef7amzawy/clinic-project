@@ -5,19 +5,25 @@ function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handlePatientsPage = (e) => {
-    const role = localStorage.getItem("role");
-    if (role === "receptionist") {
-      e.preventDefault();
-      const msg = document.createElement("div");
-      msg.className = "access-denied-message";
-      msg.innerText = "غير مصرح لك بالدخول لهذه الصفحة";
-      document.body.appendChild(msg);
-      setTimeout(() => msg.remove(), 2500);
-      return;
-    }
-    navigate("/patients");
-  };
+
+const handlePatientsPage = () => {
+  navigate("/patients");
+};
+
+
+  //const handlePatientsPage = (e) => {
+   // const role = localStorage.getItem("role");
+    //if (role === "receptionist") {
+   //   e.preventDefault();
+    //  const msg = document.createElement("div");
+     // msg.className = "access-denied-message";
+     // msg.innerText = "غير مصرح لك بالدخول لهذه الصفحة";
+     // document.body.appendChild(msg);
+      //setTimeout(() => msg.remove(), 2500);
+     // return;
+    //}
+   // navigate("/patients");
+  //};
 
   return (
     <div className="sidebar">
