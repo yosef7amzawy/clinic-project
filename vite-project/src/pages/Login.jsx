@@ -29,7 +29,7 @@ function Login() {
         return;
       }
 
-      localStorage.setItem("role", data.role);
+      localStorage.setItem("role", "doctor");
 
       if (data.role === "doctor") {
         navigate("/patients");
