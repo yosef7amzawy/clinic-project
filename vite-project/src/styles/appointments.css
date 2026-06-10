@@ -1,0 +1,240 @@
+/* ===========================
+   appointments.css
+   =========================== */
+
+/* ───── Header ───── */
+.appt-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  direction: rtl;
+}
+
+.appt-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appt-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.appt-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.appt-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ───── Stat Cards ───── */
+.appt-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.appt-stat-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;   /* أيقونة أقصى اليمين، ثم الأرقام */
+  gap: 16px;
+}
+
+.appt-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.appt-stat-icon.yellow { background: #fef9c3; }
+.appt-stat-icon.green  { background: #dcfce7; }
+.appt-stat-icon.blue   { background: #dbeafe; }
+
+.appt-stat-info {
+  text-align: right;
+  flex: 1;
+}
+.appt-stat-info h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.appt-stat-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ───── Filters Bar ───── */
+.appt-filters-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  gap: 12px;
+  direction: rtl;
+}
+
+/* الـ selects — في المنتصف */
+.appt-filters-center {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.appt-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+.appt-filter-group label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+.appt-filter-group select {
+  padding: 7px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  color: #1a1a2e;
+  background: #fff;
+  outline: none;
+  min-width: 110px;
+  direction: rtl;
+}
+
+.appt-filter-btn-blue {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-end;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.appt-filter-btn-blue:hover { background: #1d4ed8; }
+
+/* ───── Days Grid ───── */
+.appt-days {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ───── Day Card ───── */
+.appt-day-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.appt-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  direction: rtl;
+}
+
+.appt-day-header-right {
+  text-align: right;
+}
+.appt-day-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.appt-day-date {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.appt-day-header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.appt-day-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+.appt-day-icon { font-size: 16px; }
+
+/* ───── Slot ───── */
+.appt-slot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  direction: rtl;
+}
+.appt-slot:last-child { border-bottom: none; }
+
+.appt-slot-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.appt-slot-btn {
+  padding: 5px 16px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.appt-slot-btn.available {
+  background: #2563eb;
+  color: #fff;
+}
+.appt-slot-btn.available:hover { background: #1d4ed8; }
+.appt-slot-btn.booked {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}

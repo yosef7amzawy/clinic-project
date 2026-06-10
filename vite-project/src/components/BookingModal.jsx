@@ -1,77 +1,34 @@
 import { useState } from "react";
+import "../styles/bookingModal.css";
 
 function BookingModal({ slot, onClose }) {
-
-  // states
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-
-  // حالة الدفع
   const [paymentType, setPaymentType] = useState("unpaid");
-
-  // الرسائل
-  const [toast, setToast] = useState({
-    show: false,
-    text: "",
-    type: ""
-  });
+  const [toast, setToast] = useState({ show: false, text: "", type: "" });
 
   if (!slot) return null;
 
   const bookingId = "4" + Math.floor(Math.random() * 1000000);
 
-  // Toast
   const showToast = (text, type) => {
-
-    setToast({
-      show: true,
-      text,
-      type
-    });
-
+    setToast({ show: true, text, type });
     setTimeout(() => {
-
-      setToast({
-        show: false,
-        text: "",
-        type: ""
-      });
-
-      if (type === "success") {
-        onClose();
-      }
-
+      setToast({ show: false, text: "", type: "" });
+      if (type === "success") onClose();
     }, 2000);
-
   };
 
-  // save booking
   const handleBooking = async () => {
-
-    // تقسيم التاريخ والوقت
     const [datePart, timePart] = slot.split(" - ");
-
     try {
-
-      // إضافة المريض
       const patientRes = await fetch("https://localhost:7232/api/patients", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          full_Name: name,
-          phone: phone
-        })
+        body: JSON.stringify({ full_Name: name, phone }),
       });
-
       const patient = await patientRes.json();
-
-      // حالة الدفع
-      const paymentStatus =
-        paymentType === "paid"
-          ? "تم الدفع"
-          : "سيتم الدفع عند الحضور";
-
-      // إضافة الموعد
+      const paymentStatus = paymentType === "paid" ? "تم الدفع" : "سيتم الدفع عند الحضور";
       const response = await fetch("https://localhost:7232/api/appointments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -79,322 +36,163 @@ function BookingModal({ slot, onClose }) {
           patient_Id: patient.id,
           date: datePart,
           time: timePart + ":00",
-          status: paymentStatus
-        })
+          status: paymentStatus,
+        }),
       });
-
       const result = await response.json();
-
       console.log(result);
-
-      // localStorage
-      const savedAppointments =
-        JSON.parse(localStorage.getItem("appointments")) || [];
-
-      savedAppointments.push({
-        date: datePart,
-        time: timePart,
-        patientName: name,
-        phone: phone,
-        status: paymentStatus
-      });
-
-      localStorage.setItem(
-        "appointments",
-        JSON.stringify(savedAppointments)
-      );
-
-      // نجاح
+      const savedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
+      savedAppointments.push({ date: datePart, time: timePart, patientName: name, phone, status: paymentStatus });
+      localStorage.setItem("appointments", JSON.stringify(savedAppointments));
       showToast("✅ تم الحجز بنجاح", "success");
-
     } catch (error) {
-
       console.log(error);
-
-      // خطأ
       showToast("❌ حدث خطأ أثناء الحجز", "error");
-
     }
-
   };
 
   return (
-
     <>
-
       {/* Toast */}
-
       {toast.show && (
-
-        <div
-          style={{
-            position: "fixed",
-            top: "20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            background:
-              toast.type === "success"
-                ? "#e8f5e9"
-                : "#ffebee",
-            color:
-              toast.type === "success"
-                ? "#1b5e20"
-                : "#c62828",
-            padding: "18px 35px",
-            borderRadius: "12px",
-            fontWeight: "bold",
-            fontSize: "20px",
-            zIndex: "999999",
-            boxShadow: "0 5px 20px rgba(0,0,0,0.2)"
-          }}
-        >
+        <div className="bm-toast" data-type={toast.type}>
           {toast.text}
         </div>
-
       )}
 
-      <div className="modal-overlay" onClick={onClose}>
+      <div className="bm-overlay" onClick={onClose}>
+        <div className="bm-modal" onClick={(e) => e.stopPropagation()}>
 
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
-
-          <div className="modal-header">
-
-            <h3>إضافة حجز جديد</h3>
-
-            <button
-              className="modal-close"
-              onClick={onClose}
-            >
-              ✕
-            </button>
-
-          </div>
-
-          <div className="modal-row">
-
-            <div className="modal-field">
-
-              <label>الموعد</label>
-
-              <input
-                type="text"
-                value={slot}
-                readOnly
-              />
-
+          {/* Header */}
+          <div className="bm-header">
+            <button className="bm-close" onClick={onClose}>✕</button>
+            <div className="bm-header-text">
+              <h3>إضافة حجز جديد</h3>
+              <p>أدخل بيانات المريض لإتمام الحجز</p>
             </div>
-
-            <div className="modal-field">
-
-              <label>رقم الحجز</label>
-
-              <input
-                type="text"
-                value={bookingId}
-                readOnly
-              />
-
-            </div>
-
           </div>
 
-          <div className="modal-field">
+          {/* Body */}
+          <div className="bm-body">
 
-            <label>الاسم الكامل *</label>
-
-            <input
-              type="text"
-              placeholder="اسم المريض"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-
-          </div>
-
-          <div className="modal-field">
-
-            <label>رقم الهاتف *</label>
-
-            <input
-              type="text"
-              placeholder="01xxxxxxxxx"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-
-          </div>
-
-          <div className="modal-row">
-
-            <div className="modal-field">
-
-              <label>تاريخ الميلاد</label>
-
-              <input type="date" />
-
-            </div>
-
-            <div className="modal-field">
-
-              <label>الجنس</label>
-
-              <div className="modal-radios">
-
-                <label>
-                  <input type="radio" name="gender" />
-                  ذكر
-                </label>
-
-                <label>
-                  <input type="radio" name="gender" />
-                  أنثى
-                </label>
-
+            {/* Slot + ID */}
+            <div className="bm-row">
+              <div className="bm-field">
+                <label>رقم الحجز</label>
+                <input type="text" value={bookingId} readOnly className="bm-input bm-readonly" />
               </div>
-
+              <div className="bm-field">
+                <label>الموعد</label>
+                <input type="text" value={slot} readOnly className="bm-input bm-readonly bm-slot" />
+              </div>
             </div>
 
-          </div>
-
-          <div className="modal-field">
-
-            <label>العنوان</label>
-
-            <input
-              type="text"
-              placeholder="عنوان المريض"
-            />
-
-          </div>
-
-          {/* طريقة الدفع */}
-
-          <div className="modal-field">
-
-            <label>
-              <strong>طريقة الدفع</strong>
-            </label>
-
-            <div className="modal-payment">
-
-              <label className="payment-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  checked={paymentType === "unpaid"}
-                  onChange={() => setPaymentType("unpaid")}
-                />
-
-                الدفع عند الحضور
-
-              </label>
-
-              <label className="payment-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  checked={paymentType === "paid"}
-                  onChange={() => setPaymentType("paid")}
-                />
-
-                الدفع عبر الإنترنت
-
-              </label>
-
+            {/* Name */}
+            <div className="bm-field">
+              <label>الاسم الكامل <span className="bm-required">*</span></label>
+              <input
+                type="text"
+                placeholder="اسم المريض"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="bm-input"
+              />
             </div>
 
-          </div>
-
-          {/* رسالة الدفع عند الحضور */}
-
-          {paymentType === "unpaid" && (
-
-            <div
-              style={{
-                marginTop: "10px",
-                padding: "12px",
-                background: "#fff3cd",
-                color: "#856404",
-                borderRadius: "8px",
-                fontWeight: "bold",
-                textAlign: "center"
-              }}
-            >
-              سيتم الدفع عند الحضور 💰
+            {/* Phone */}
+            <div className="bm-field">
+              <label>رقم الهاتف <span className="bm-required">*</span></label>
+              <input
+                type="text"
+                placeholder="01xxxxxxxxx"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="bm-input"
+              />
             </div>
 
-          )}
+            {/* DOB + Gender */}
+            <div className="bm-row">
+              <div className="bm-field">
+                <label>الجنس</label>
+                <div className="bm-radios">
+                  <label className="bm-radio-label">
+                    <input type="radio" name="gender" /> ذكر
+                  </label>
+                  <label className="bm-radio-label">
+                    <input type="radio" name="gender" /> أنثى
+                  </label>
+                </div>
+              </div>
+              <div className="bm-field">
+                <label>تاريخ الميلاد</label>
+                <input type="date" className="bm-input" />
+              </div>
+            </div>
 
-          {/* فودافون كاش */}
+            {/* Address */}
+            <div className="bm-field">
+              <label>العنوان</label>
+              <input type="text" placeholder="عنوان المريض" className="bm-input" />
+            </div>
 
-          {paymentType === "paid" && (
-
-            <div className="modal-field">
-
-              <label>وسيلة الدفع:</label>
-
-              <div className="modal-payment">
-
-                <label className="payment-option selected">
-
+            {/* Payment */}
+            <div className="bm-field">
+              <label>طريقة الدفع</label>
+              <div className="bm-payment-options">
+                <label className={`bm-payment-opt ${paymentType === "unpaid" ? "active" : ""}`}>
                   <input
                     type="radio"
-                    checked
-                    readOnly
+                    name="payment"
+                    checked={paymentType === "unpaid"}
+                    onChange={() => setPaymentType("unpaid")}
                   />
-
-                  📱 فودافون كاش
-
+                  الدفع عند الحضور
                 </label>
-
+                <label className={`bm-payment-opt ${paymentType === "paid" ? "active" : ""}`}>
+                  <input
+                    type="radio"
+                    name="payment"
+                    checked={paymentType === "paid"}
+                    onChange={() => setPaymentType("paid")}
+                  />
+                  الدفع عبر الإنترنت
+                </label>
               </div>
-
-              <div
-                style={{
-                  marginTop: "12px",
-                  padding: "12px",
-                  background: "#e8f5e9",
-                  color: "#1b5e20",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                  textAlign: "center"
-                }}
-              >
-                يرجى دفع 200 ج للرقم التالي:
-                <br />
-                01012345678
-              </div>
-
             </div>
 
-          )}
+            {/* Payment notices */}
+            {paymentType === "unpaid" && (
+              <div className="bm-notice bm-notice--warn">
+                💰 سيتم الدفع عند الحضور
+              </div>
+            )}
 
-          <div className="modal-actions">
+            {paymentType === "paid" && (
+              <div className="bm-field">
+                <label>وسيلة الدفع:</label>
+                <div className="bm-payment-options">
+                  <label className="bm-payment-opt active">
+                    <input type="radio" checked readOnly /> 📱 فودافون كاش
+                  </label>
+                </div>
+                <div className="bm-notice bm-notice--success">
+                  يرجى دفع 200 ج للرقم التالي:<br />01012345678
+                </div>
+              </div>
+            )}
 
-            <button
-              className="modal-save"
-              onClick={handleBooking}
-            >
-              حفظ
-            </button>
+          </div>
 
-            <button
-              className="modal-cancel"
-              onClick={onClose}
-            >
-              إلغاء
-            </button>
-
+          {/* Actions */}
+          <div className="bm-actions">
+            <button className="bm-btn-save" onClick={handleBooking}>حفظ</button>
+            <button className="bm-btn-cancel" onClick={onClose}>إلغاء</button>
           </div>
 
         </div>
-
       </div>
-
     </>
-
   );
 }
 

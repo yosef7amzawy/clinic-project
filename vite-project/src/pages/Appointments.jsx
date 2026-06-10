@@ -2,294 +2,153 @@ import { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import BookingModal from "../components/BookingModal";
 import "../index.css";
+import "../styles/appointments.css";
 import "../styles/bookingModal.css";
 
 const data = [
-  {
-    day: "الأحد 17 مايو",
-    date: "2026-05-17",
-    times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"],
-  },
-
-  {
-    day: "الاثنين 18 مايو",
-    date: "2026-05-18",
-    times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"],
-  },
-
-  {
-    day: "الثلاثاء 19 مايو",
-    date: "2026-05-19",
-    times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"],
-  },
-
-  {
-    day: "الأربعاء 20 مايو",
-    date: "2026-05-20",
-    times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"],
-  },
+  { day: "الأحد 17 مايو", date: "2026-05-17", times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"] },
+  { day: "الاثنين 18 مايو", date: "2026-05-18", times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"] },
+  { day: "الثلاثاء 19 مايو", date: "2026-05-19", times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"] },
+  { day: "الأربعاء 20 مايو", date: "2026-05-20", times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"] },
 ];
 
+const totalSlots = data.reduce((acc, d) => acc + d.times.length, 0);
+
 function Appointments() {
-
   const [selectedSlot, setSelectedSlot] = useState(null);
-
   const [bookedSlots, setBookedSlots] = useState([]);
 
   useEffect(() => {
-
     fetch("https://localhost:7232/api/appointments")
       .then((res) => res.json())
-      .then((data) => {
-        setBookedSlots(data);
-      });
-
+      .then((data) => setBookedSlots(data));
   }, []);
 
-  const isBooked = (date, time) => {
+  const isBooked = (date, time) =>
+    bookedSlots.some(
+      (item) =>
+        item.date?.split("T")[0] === date &&
+        item.time?.toString().substring(0, 5) === time
+    );
 
-    return bookedSlots.some((item) => {
-
-      const itemDate =
-        item.date?.split("T")[0];
-
-      const itemTime =
-        item.time
-          ?.toString()
-          .substring(0, 5);
-
-      return (
-        itemDate === date &&
-        itemTime === time
-      );
-
-    });
-
-  };
+  const bookedCount = data.reduce(
+    (acc, d) => acc + d.times.filter((t) => isBooked(d.date, t)).length,
+    0
+  );
+  const availableCount = totalSlots - bookedCount;
 
   return (
-
-    <div className="container">
-
+    <div className="container" dir="rtl">
       <Sidebar />
 
       <div className="main">
 
-        <div
-          className="top-bar"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            marginBottom: "40px"
-          }}
-        >
-
-          <div className="title">
-            📅 المواعيد المتاحة
+        {/* ───── Header ───── */}
+        <div className="appt-header">
+          <div className="appt-header-right">
+            <div className="appt-subtitle">🌐 الحجز الإلكتروني</div>
+            <h1 className="appt-title">المواعيد المتاحة</h1>
+            <p className="appt-desc">اختر اليوم والوقت المناسب لحجز موعدك في العيادة.</p>
           </div>
-
-          <div
-            className="filters"
-            style={{
-              display: "flex",
-              gap: "20px",
-              alignItems: "center"
-            }}
-          >
-
-            {/* التاريخ */}
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-              }}
-            >
-              <label style={{ marginBottom: "8px" }}>
-                اختر التاريخ
-              </label>
-
-              <select style={{ width: "110px" }}>
-
-                {Array.from({ length: 31 }, (_, i) => (
-                  <option key={i + 1}>
-                    {i + 1}
-                  </option>
-                ))}
-
-              </select>
-            </div>
-
-            {/* الشهر */}
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-              }}
-            >
-              <label style={{ marginBottom: "8px" }}>
-                اختر الشهر
-              </label>
-
-              <select style={{ width: "120px" }}>
-
-                {[
-                  "يناير",
-                  "فبراير",
-                  "مارس",
-                  "أبريل",
-                  "مايو",
-                  "يونيو",
-                  "يوليو",
-                  "أغسطس",
-                  "سبتمبر",
-                  "أكتوبر",
-                  "نوفمبر",
-                  "ديسمبر"
-                ].map((month, index) => (
-
-                  <option key={index}>
-                    {month}
-                  </option>
-
-                ))}
-
-              </select>
-            </div>
-
-            {/* اليوم */}
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-              }}
-            >
-              <label style={{ marginBottom: "8px" }}>
-                اختر اليوم
-              </label>
-
-              <select style={{ width: "120px" }}>
-
-                {[
-                  "الأحد",
-                  "الاثنين",
-                  "الثلاثاء",
-                  "الأربعاء"
-                ].map((day, index) => (
-
-                  <option key={index}>
-                    {day}
-                  </option>
-
-                ))}
-
-              </select>
-            </div>
-
-          </div>
-
         </div>
 
-        <div
-          className="days"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "25px",
-            flexWrap: "wrap",
-            width: "100%"
-          }}
-        >
+        {/* ───── Stat Cards ───── */}
+        <div className="appt-stats">
+          {/* محجوزة */}
+          <div className="appt-stat-card">
+            <div className="appt-stat-icon yellow">⚠️</div>
+            <div className="appt-stat-info">
+              <h3>{bookedCount}</h3>
+              <span>محجوزة</span>
+            </div>
+          </div>
 
+          {/* متاحة */}
+          <div className="appt-stat-card">
+            <div className="appt-stat-icon green">✅</div>
+            <div className="appt-stat-info">
+              <h3>{availableCount}</h3>
+              <span>متاحة</span>
+            </div>
+          </div>
+
+          {/* إجمالي */}
+          <div className="appt-stat-card">
+            <div className="appt-stat-icon blue">📅</div>
+            <div className="appt-stat-info">
+              <h3>{totalSlots}</h3>
+              <span>إجمالي المواعيد</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ───── Filters Bar ───── */}
+        <div className="appt-filters-bar">
+          <button className="appt-filter-btn-blue">+ إضافة يوم</button>
+          <div className="appt-filters-center">
+            <div className="appt-filter-group">
+              <label>اختر اليوم</label>
+              <select>
+                {["الأحد","الاثنين","الثلاثاء","الأربعاء"].map((d, i) => (
+                  <option key={i}>{d}</option>
+                ))}
+              </select>
+            </div>
+            <div className="appt-filter-group">
+              <label>اختر الشهر</label>
+              <select>
+                {["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"].map((m, i) => (
+                  <option key={i}>{m}</option>
+                ))}
+              </select>
+            </div>
+            <div className="appt-filter-group">
+              <label>اختر التاريخ</label>
+              <select>
+                {Array.from({ length: 31 }, (_, i) => (
+                  <option key={i + 1}>{i + 1}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* ───── Days Grid ───── */}
+        <div className="appt-days">
           {data.map((day, i) => (
+            <div className="appt-day-card" key={i}>
 
-            <div
-              className="day"
-              key={i}
-              style={{
-                width: "260px"
-              }}
-            >
-
-              <div
-                className="day-header"
-                style={{
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  padding: "15px",
-                  marginBottom: "15px"
-                }}
-              >
-                {day.day}
+              <div className="appt-day-header">
+                <div className="appt-day-header-right">
+                  <span className="appt-day-name">{day.day}</span>
+                  <span className="appt-day-date">{day.date}</span>
+                </div>
+                <div className="appt-day-header-left">
+                  <span className="appt-day-count">
+                    {day.times.filter((t) => isBooked(day.date, t)).length}/{day.times.length}
+                  </span>
+                  <span className="appt-day-icon">📅</span>
+                </div>
               </div>
 
               {day.times.map((time, j) => (
-
-                <div
-                  className="slot"
-                  key={j}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "12px",
-                    padding: "15px",
-                    border: "1px solid #ddd",
-                    background: "#fff"
-                  }}
-                >
-
-                  <span>
-                    ⏱ {time}
-                  </span>
-
+                <div className="appt-slot" key={j}>
+                  <span className="appt-slot-time">⏱ {time}</span>
                   {isBooked(day.date, time) ? (
-
-                    <button
-                      style={{
-                        background: "#888",
-                        cursor: "not-allowed",
-                        border: "none",
-                        color: "#fff",
-                        padding: "10px 18px"
-                      }}
-                    >
-                      محجوز
-                    </button>
-
+                    <button className="appt-slot-btn booked" disabled>محجوز</button>
                   ) : (
-
                     <button
-                      style={{
-                        background: "#166534",
-                        color: "#fff",
-                        border: "none",
-                        padding: "10px 18px",
-                        cursor: "pointer"
-                      }}
-                      onClick={() =>
-                        setSelectedSlot(`${day.date} - ${time}`)
-                      }
+                      className="appt-slot-btn available"
+                      onClick={() => setSelectedSlot(`${day.date} - ${time}`)}
                     >
-                      حجز
+                      احجز
                     </button>
-
                   )}
-
                 </div>
-
               ))}
 
             </div>
-
           ))}
-
         </div>
 
       </div>
@@ -298,9 +157,7 @@ function Appointments() {
         slot={selectedSlot}
         onClose={() => setSelectedSlot(null)}
       />
-
     </div>
-
   );
 }
 

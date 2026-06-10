@@ -1,154 +1,316 @@
+/* ===========================
+   reception.css
+   =========================== */
+
 .container {
   display: flex;
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: "Segoe UI", "Cairo", Arial, sans-serif;
+  direction: rtl;
 }
 
 .main {
   flex: 1;
-  padding: 40px 35px;
-  background: #f4f6f5;
-}
-
-/* ===== TOP SECTION ===== */
-.top-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 28px 32px;
+  overflow-y: auto;
   direction: rtl;
-  margin-bottom: 35px;
 }
 
-/* ===== RIGHT SIDE ===== */
-.right-side {
+/* ───── Header ───── */
+.rec-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.rec-header-right {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+
+.rec-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rec-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.rec-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.rec-new-btn {
+  padding: 10px 20px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.rec-new-btn:hover { background: #1d4ed8; }
+
+/* ───── Stat Cards ───── */
+.rec-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rec-stat-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;        /* أيقونة أول = أقصى اليمين، ثم الأرقام */
+  gap: 16px;
+  position: relative;
+}
+
+.rec-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.rec-stat-icon.yellow { background: #fef9c3; }
+.rec-stat-icon.green  { background: #dcfce7; }
+.rec-stat-icon.blue   { background: #dbeafe; }
+
+.rec-stat-info {
+  text-align: right;
+  flex: 1;
+}
+.rec-stat-info h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.rec-stat-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* "من 8" — على أقصى اليسار من الكارد */
+.rec-stat-badge {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-left: auto;
+  align-self: flex-start;
+  padding-top: 2px;
+}
+
+/* ───── Filters Bar ───── */
+.rec-filters-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  gap: 12px;
+  direction: rtl;
+}
+
+/* الأيقونة والنص — على اليمين */
+.rec-filters-icon-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* الـ selects — في المنتصف */
+.rec-filters-center {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.rec-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   align-items: flex-start;
 }
-
-/* العنوان */
-.reception-page-title {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: right;
-  padding-right: 0;
+.rec-filter-group label {
+  font-size: 11px;
+  color: #9ca3af;
 }
-
-/* الأيام */
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-  margin-right: 0;
-}
-
-.tab {
-  padding: 10px 16px;
-  border: 1px solid #ddd;
+.rec-filter-group select {
+  padding: 7px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  color: #1a1a2e;
   background: #fff;
+  outline: none;
+  min-width: 110px;
+  direction: rtl;
+}
+
+.rec-filter-btn-blue {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  color: #fff;
   cursor: pointer;
   font-weight: 600;
-  color: #333;
+  align-self: flex-end;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
 }
+.rec-filter-btn-blue:hover { background: #1d4ed8; }
 
-.tab.active {
-  background: #1b5e46;
-  color: white;
-  border-color: #1b5e46;
-}
-
-/* ===== FILTERS ===== */
-.filters {
+/* ───── Day Tabs ───── */
+/* direction: ltr عشان أول tab في الـ DOM يظهر على اليمين */
+.rec-tabs {
   display: flex;
-  gap: 20px;
-  align-items: flex-end;
-}
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  min-width: 120px;
-}
-
-.filter label {
-  font-size: 13px;
-  margin-bottom: 5px;
-  color: #666;
-}
-
-.filter select {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
+  direction: ltr;          /* عكس اتجاه الـ flex عشان أول يوم على اليمين */
+  margin-bottom: 16px;
   background: #fff;
-  font-family: Cairo;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* ===== INFO ===== */
-.info {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  text-align: right;
-}
-
-/* ===== TABLE ===== */
-.table {
-  margin-top: 10px;
-  background: white;
-  border: 1px solid #ddd;
-}
-
-.table-header {
-  display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr 150px;
-  background: #1b5e46;
-  color: white;
-  padding: 12px;
-  font-weight: bold;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr 150px;
-  align-items: center;
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.time {
-  font-weight: 600;
-}
-
-/* ===== STATUS ===== */
-.status {
-  padding: 4px 12px;
-  font-size: 13px;
-  border: 1px solid;
-  width: fit-content;
-}
-
-.status.notPaid {
-  color: #e53935;
-  border-color: #e53935;
-}
-
-.status.pending {
-  color: #777;
-  border-color: #ccc;
-}
-
-.status.paid {
-  color: #2e7d32;
-  border-color: #2e7d32;
-}
-
-/* ===== BOOK BAR ===== */
-.book-bar {
-  grid-column: 2 / 6;
-  background: #1b5e46;
-  color: white;
+.rec-tab {
+  flex: 1;
+  padding: 12px 16px;
   text-align: center;
-  padding: 6px 0;
+  font-size: 13px;
   font-weight: 600;
-  margin: 0 10px;
+  color: #6b7280;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-right: 1px solid #e5e7eb;
+  transition: all 0.15s;
 }
+.rec-tab:last-child  { border-right: none; }
+.rec-tab:hover       { background: #f9fafb; }
+.rec-tab.active      { background: #2563eb; color: #fff; }
+
+.rec-tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.rec-tab.active .rec-tab-dot { background: #fff; }
+
+/* ───── Table ───── */
+.rec-table {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.rec-table-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 1fr 150px;
+  padding: 12px 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: right;
+  direction: rtl;
+}
+
+.rec-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 1fr 150px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+  font-size: 14px;
+  color: #1a1a2e;
+  text-align: right;
+  direction: rtl;
+  transition: background 0.1s;
+}
+.rec-row:last-child { border-bottom: none; }
+.rec-row:hover      { background: #f9fafb; }
+
+.rec-time {
+  font-weight: 600;
+  color: #374151;
+}
+
+.rec-book-bar {
+  grid-column: 2 / 6;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.rec-book-bar:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+.rec-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.rec-status.pending   { background: #fef9c3; color: #92400e; }
+.rec-status.paid      { background: #dcfce7; color: #166534; }
+.rec-status.cancelled { background: #fee2e2; color: #991b1b; }
