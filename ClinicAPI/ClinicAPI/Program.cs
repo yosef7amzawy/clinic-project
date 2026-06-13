@@ -23,3 +23,20 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
+var app = builder.Build();
+// Auto-apply migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ClinicDbContext>();
+    db.Database.Migrate();
+}
+
+app.UseCors("AllowAll");
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.MapControllers();
+
+app.Run();
