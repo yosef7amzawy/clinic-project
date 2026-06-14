@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import BookingModal from "../components/BookingModal";
 import "../styles/reception.css";
+import { API_BASE_URL } from "../config";
+
 
 const times = ["10:00","10:30","11:00","11:30","12:00","14:00","14:30","15:00"];
 const allowedDays = ["2026-05-17","2026-05-18","2026-05-19","2026-05-20"];
@@ -12,7 +14,7 @@ function Reception() {
   const [data, setData] = useState({});
 
   const fetchData = (keepDay = "") => {
-    fetch("https://localhost:7232/api/appointments")
+    fetch(`${API_BASE_URL}/appointments`)
       .then((res) => res.json())
       .then((result) => {
         const groupedData = {};

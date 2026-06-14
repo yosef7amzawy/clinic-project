@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/bookingModal.css";
+import { API_BASE_URL } from "../config";
 
 function BookingModal({ slot, onClose }) {
   const [name, setName] = useState("");
@@ -22,14 +23,14 @@ function BookingModal({ slot, onClose }) {
   const handleBooking = async () => {
     const [datePart, timePart] = slot.split(" - ");
     try {
-      const patientRes = await fetch("https://localhost:7232/api/patients", {
+      const patientRes = await fetch(`${API_BASE_URL}/patients`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ full_Name: name, phone }),
       });
       const patient = await patientRes.json();
       const paymentStatus = paymentType === "paid" ? "تم الدفع" : "سيتم الدفع عند الحضور";
-      const response = await fetch("https://localhost:7232/api/appointments", {
+      const response = await fetch(`${API_BASE_URL}/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

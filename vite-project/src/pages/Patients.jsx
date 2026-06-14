@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import PatientPanel from "../components/PatientPanel";
 import "../styles/patients.css";
 import "../styles/patientPanel.css";
+import { API_BASE_URL } from "../config";
 
 function Patients() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Patients() {
 
   // جلب الحجوزات
   useEffect(() => {
-    fetch("https://localhost:7232/api/appointments")
+    fetch(`${API_BASE_URL}/appointments`)
       .then((res) => res.json())
       .then((data) => {
         const formattedData = data.map((appt) => ({
@@ -62,7 +63,7 @@ function Patients() {
 
   // حفظ الكشف
   const saveVisit = async () => {
-    const response = await fetch("https://localhost:7232/api/PatientHistory", {
+    const response = await fetch(`${API_BASE_URL}/PatientHistory`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -76,7 +77,7 @@ function Patients() {
     });
 
     if (response.ok) {
-      await fetch(`https://localhost:7232/api/appointments/${selectedVisitPatient.id}/finish`, { method: "PUT" });
+      await fetch(`${API_BASE_URL}/appointments/${selectedVisitPatient.id}/finish`, { method: "PUT" });
 
       setAppointments((prev) =>
         prev.map((appt) =>

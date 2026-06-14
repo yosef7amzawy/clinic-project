@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function PatientPanel({ patient, onClose }) {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
     if (patient) {
-      fetch(`https://localhost:7232/api/PatientHistory/${patient.name}`)
+      fetch(`${import.meta.env.VITE_API_BASE_URL}/PatientHistory/${patient.name}`)
         .then((res) => res.json())
         .then((data) => setHistory(data));
     }

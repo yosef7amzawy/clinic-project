@@ -4,6 +4,7 @@ import BookingModal from "../components/BookingModal";
 import "../index.css";
 import "../styles/appointments.css";
 import "../styles/bookingModal.css";
+import { API_BASE_URL } from "../config";
 
 const data = [
   { day: "الأحد 17 مايو", date: "2026-05-17", times: ["10:00","10:30","11:00","11:30","12:00","14:00","15:00"] },
@@ -19,7 +20,7 @@ function Appointments() {
   const [bookedSlots, setBookedSlots] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:7232/api/appointments")
+    fetch(`${API_BASE_URL}/appointments`)
       .then((res) => res.json())
       .then((data) => setBookedSlots(data));
   }, []);
